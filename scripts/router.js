@@ -24,7 +24,7 @@ router.setState = function(page, index, entry) {
         
     }
     // Set to Settings, modify body
-    if (page == "settings") {
+    if (page == "setting") {
         bodySelector.className = "settings";
         titleSelector.innerHTML = "Settings";
         let newPage = document.createElement("entry-page");
