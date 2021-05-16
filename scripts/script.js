@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('img').addEventListener("click", clickSetting);
 
 function clickSetting() {
-    router.setState("settings", null, null);
+    router.setState("setting", null, null);
     history.pushState({},"settings", '#settings');
 }
 
