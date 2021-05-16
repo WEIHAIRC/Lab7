@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('img').addEventListener("click", clickSetting);
 
 function clickSetting() {
-    router.setState("setting", null, null);
+    router.setState("settings", null, null);
     history.pushState({},"settings", '#settings');
 }
 
@@ -40,3 +40,4 @@ function clickTitle() {
     router.setState("home", null, null);
     history.pushState({}, "home", '/');
 }
+
