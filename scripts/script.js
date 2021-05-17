@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Make each entry clickable
         newPost.addEventListener("click", () => {
-            history.pushState({index}, "entry", `#entry${index+1}`);
-            router.setState("entry", index, entry);
+            setState("entry", index, entry, false);
         });
 
         document.querySelector('main').appendChild(newPost);
@@ -29,15 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('img').addEventListener("click", clickSetting);
 
 function clickSetting() {
-    router.setState("setting", null, null);
-    history.pushState({},"settings", '#settings');
-}
+    setState("setting", null, null, false);
+};
 
 // Title clickable come back to homepage.
 document.querySelector('h1').addEventListener("click", clickTitle);
 
 function clickTitle() {
-    router.setState("home", null, null);
-    history.pushState({}, "home", '/');
-}
+    setState("home", null, null, false);
+};
 
+window.addEventListener('popstate', (event) => {
+    setState(event.state, null, null, true);
+});
